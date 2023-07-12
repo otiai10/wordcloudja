@@ -9,14 +9,17 @@ RUN apt-get install -y \
     git \
     make \
     curl \
-    file
+    file \
+    sudo \
+    fonts-ipafont-gothic
 
 RUN pip install --upgrade pip
 RUN pip install \
     wordcloud \
-    mecab-python3
+    mecab-python3 \
+    unidic-lite
 
 RUN git clone --depth 1 https://github.com/neologd/mecab-ipadic-neologd.git
-RUN ./mecab-ipadic-neologd/bin/install-mecab-ipadic-neologd -n
+RUN yes yes | ./mecab-ipadic-neologd/bin/install-mecab-ipadic-neologd -n -a
 
 ADD ./generate.py /
