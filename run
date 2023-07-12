@@ -1,2 +1,4 @@
+docker build -t wordcloudja .
+
 PWD=`pwd`
-docker run -it --rm -v ${PWD}/data:/data wordcloudja bash
+docker run -it --rm -v ${PWD}/data:/data wordcloudja python generate.py ${1}
