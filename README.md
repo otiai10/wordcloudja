@@ -9,5 +9,5 @@
 
 
 ```
-./run ./data/your-text-data.txt
+./run ./data/your-japanese-text-data.txt
 ```
