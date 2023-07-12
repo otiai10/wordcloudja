@@ -32,9 +32,10 @@ words = ' '.join(word_list)
 font_path = '/usr/share/fonts/opentype/ipafont-gothic/ipagp.ttf'
 # Generate a word cloud image
 wordcloud = WordCloud(
-    width=800,
+    width=1600,
     height=900,
     font_path=font_path,
+    background_color='white',
 ).generate(words)
 
 # lower max_font_size
