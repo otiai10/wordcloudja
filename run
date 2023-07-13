@@ -1,4 +1,24 @@
-# ./build
+#!/bin/bash
+
+WCJ_BUILD=
+while [[ $# -gt 0 ]]; do
+  case "${1}" in
+    --build|-b)
+      WCJ_BUILD=YES
+      shift;;
+    *)
+      break
+  esac
+done
+
+if [ -n "${WCJ_BUILD}" ]; then
+  docker build -t wordcloudja .
+fi
+
+if [ -z "${1}" ]; then
+  echo "Bye"
+  exit 0
+fi
 
 PWD=`pwd`
 docker run -it --rm -v ${PWD}/data:/data wordcloudja python generate.py ${1}

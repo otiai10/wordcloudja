@@ -12,6 +12,7 @@ from wordcloud import WordCloud
 import MeCab
 
 a = sys.argv[1]
+print(a)
 text = open(a).read()
 
 tagger = MeCab.Tagger()
@@ -25,6 +26,7 @@ while node:
         word_list.append(node.surface)
     node = node.next
 
+print(f'{len(word_list)} words...')
 # 一本のインプットにする
 words = ' '.join(word_list)
 # print(words)

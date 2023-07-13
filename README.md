@@ -8,6 +8,7 @@
 # Usage
 
 
-```
+```sh
+# ./run --build
 ./run ./data/your-japanese-text-data.txt
 ```
